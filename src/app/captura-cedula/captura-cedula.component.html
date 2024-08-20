@@ -1,0 +1,26 @@
+<div class="captura-cedula-container">
+  <h2>Ingrese su Información de Identificación</h2>
+  
+  <div class="input-group">
+    <label for="tipo-iden">Tipo de Identificación</label>
+    <select id="tipo-iden" [(ngModel)]="tipoIden" name="tipoIden">
+      <option value="">Seleccione</option>
+      <option value="CC">Cédula de Ciudadanía</option>
+      <option value="TI">Tarjeta de Identidad</option>
+      <option value="CE">Cédula de Extranjería</option>
+    </select>
+  </div>
+
+  <div class="input-group">
+    <label for="numero-iden">Número de Identificación</label>
+    <input
+      type="text"
+      id="numero-iden"
+      [(ngModel)]="numeroIden"
+      name="numeroIden"
+      placeholder="Ingrese el número de identificación"
+    />
+  </div>
+
+  <button (click)="consultarPaciente()" class="submit-btn">Consultar</button>
+</div>

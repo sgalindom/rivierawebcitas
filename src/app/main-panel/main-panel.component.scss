@@ -1,0 +1,90 @@
+#inst_title {
+  background-color: #fff; // Color de fondo del header
+  padding: 10px 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#logo_area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#logo {
+  width: 550px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+#logo:hover {
+  transform: scale(1.05);
+}
+
+.main-container {
+  text-align: center;
+  padding: 20px;
+}
+
+.welcome-card {
+  background-color: #f0f8ff; // Color de fondo
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.welcome-icon {
+  width: 80px;
+  margin-bottom: 10px;
+}
+
+h1 {
+  font-size: 2em;
+  color: #333;
+  margin: 10px 0;
+}
+
+h2 {
+  font-size: 1.5em;
+  color: #666;
+  margin: 10px 0;
+}
+
+p {
+  font-size: 1em;
+  color: #555;
+}
+
+.service-card {
+  background-color: #ffffff; // Color de fondo
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h3 {
+  font-size: 1.25em;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.service-btn {
+  display: flex;
+  align-items: center;
+  background-color: #007bff; // Color de fondo del botón
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.service-btn:hover {
+  background-color: #0056b3; // Color al pasar el ratón
+}
+
+.service-icon {
+  width: 24px;
+  margin-right: 10px;
+}

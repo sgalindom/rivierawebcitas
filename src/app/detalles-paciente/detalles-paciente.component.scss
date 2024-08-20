@@ -1,6 +1,19 @@
+/* detalles-paciente.component.css */
 .container {
     text-align: center;
     margin: 20px;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  input {
+    margin: 10px;
+    padding: 10px;
+    width: 80%;
   }
   
   button {
@@ -15,21 +28,5 @@
   
   button:hover {
     background-color: #0056b3;
-  }
-  
-  .service-btn {
-    background-color: #28a745;
-  }
-  
-  .option-btn {
-    background-color: #17a2b8;
-  }
-  
-  .confirm-btn {
-    background-color: #ffc107;
-  }
-  
-  .home-btn {
-    background-color: #dc3545;
   }
   

@@ -1,0 +1,35 @@
+<header id="inst_title">
+  <div id="logo_area">
+    <img 
+      src="https://s3-us-west-1.amazonaws.com/agendaton/ClinicaLaRiviera/email_pics/ic_top_bar.jpeg" 
+      id="logo" 
+      (click)="redirectLogo()"
+      alt="Logo"
+    />
+  </div>
+</header>
+
+<div class="main-container">
+  <div class="welcome-card">
+    <img 
+      src="https://cdn-icons-png.flaticon.com/512/3063/3063176.png" 
+      alt="Hospital Icon" 
+      class="welcome-icon"
+    />
+    <h1>Bienvenido a Clínica La Riviera</h1>
+    <h2>Por un Bienestar en Movimiento</h2>
+    <p>Aquí podrás agendar tus servicios de manera fácil y rápida. Elige el servicio que necesitas y déjanos ayudarte a programar tu cita.</p>
+  </div>
+
+  <div class="service-card">
+    <h3>¿Qué servicio deseas agendar?</h3>
+    <button (click)="selectService('Ortopedia')" class="service-btn">
+      <img 
+        src="https://cdn.icon-icons.com/icons2/468/PNG/512/Bone_44351.png" 
+        alt="Ortopedia Icon" 
+        class="service-icon"
+      />
+      Ortopedia
+    </button>
+  </div>
+</div>
