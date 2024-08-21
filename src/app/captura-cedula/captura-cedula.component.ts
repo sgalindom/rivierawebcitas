@@ -5,9 +5,9 @@ import { FormsModule } from '@angular/forms';  // Importa FormsModule
 @Component({
   selector: 'app-captura-cedula',
   standalone: true,
-  imports: [FormsModule],  // Agrega FormsModule aquí
+  imports: [FormsModule], 
   templateUrl: './captura-cedula.component.html',
-  styleUrls: ['./captura-cedula.component.scss']  // Asegúrate de que esto esté bien escrito
+  styleUrls: ['./captura-cedula.component.scss']  
 })
 export class CapturaCedulaComponent {
   tipoIden: string = '';
