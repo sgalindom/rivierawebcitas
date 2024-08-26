@@ -1,3 +1,4 @@
+// src/app/app.module.ts
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -13,6 +14,7 @@ import { appRoutes } from './app.routes';
 @NgModule({
   declarations: [
     AppComponent,
+    CapturaCedulaComponent,
     OpcionesOrtopediaComponent,
     DetallesPacienteComponent,
     ConfirmacionCitaComponent
@@ -23,7 +25,6 @@ import { appRoutes } from './app.routes';
     ReactiveFormsModule,
     HttpClientModule,
     RouterModule.forRoot(appRoutes),
-    CapturaCedulaComponent // Asegúrate de importar el componente
   ],
   providers: [],
   bootstrap: [AppComponent]

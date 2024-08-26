@@ -1,27 +1,56 @@
-/* opciones-ortopedia.component.css */
+.main-container {
+  padding: 40px;
+  background: linear-gradient(135deg, #f3f4f6 0%, #ffffff 100%); // Fondo degradado suave
+  text-align: center;
+}
+
+h2 {
+  font-size: 2.4em;
+  color: #111827;
+  margin-bottom: 20px;
+  font-weight: 700; // Negrita
+}
+
 .container {
-    text-align: center;
-    margin: 20px;
-  }
-  
-  .option-btn {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    padding: 15px 25px;
-    margin: 10px;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 5px;
-    display: block;
-    width: 80%;
-    text-align: left;
-    padding-left: 20px;
-    text-align: left;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  }
-  
-  .option-btn:hover {
-    background-color: #0056b3;
-  }
-  
+  display: flex;
+  justify-content: center;
+  gap: 20px; // Espacio entre tarjetas
+  flex-wrap: wrap; // Permite que las tarjetas se envuelvan si hay más de tres en una fila
+}
+
+.option-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 200px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.option-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.option-icon {
+  width: 60px;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease;
+}
+
+.option-card:hover .option-icon {
+  transform: rotate(15deg); // Rotación ligera al pasar el ratón
+}
+
+h3 {
+  font-size: 1.2em;
+  color: #111827;
+  font-weight: 500; // Seminegrita
+}

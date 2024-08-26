@@ -1,5 +1,4 @@
 import { Routes } from '@angular/router';
-
 import { MainPanelComponent } from './main-panel/main-panel.component';
 import { CapturaCedulaComponent } from './captura-cedula/captura-cedula.component';
 import { OpcionesOrtopediaComponent } from './opciones-ortopedia/opciones-ortopedia.component';

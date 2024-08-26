@@ -1,29 +1,75 @@
+<!-- src/app/captura-cedula/captura-cedula.component.html -->
 <div class="captura-cedula-container">
-  <h2>Ingrese su Información de Identificación</h2>
-  
-  <div class="input-group">
-    <label for="tipo-iden">Tipo de Identificación</label>
-    <select id="tipo-iden" [(ngModel)]="tipoIden" name="tipoIden">
-      <option value="">Seleccione</option>
-      <option value="CC">Cédula de Ciudadanía</option>
-      <option value="TI">Tarjeta de Identidad</option>
-      <option value="CE">Cédula de Extranjería</option>
-      <option value="RC">Registro Civil</option>
-      <option value="PP">Pasaporte</option>
-      <option value="PEP">Permiso especial de permanencia</option>
-    </select>
+  <div class="header">
+    <img src="https://static.wixstatic.com/media/6587f5_53931f944c2a46a3a7fc2b242c26844e~mv2.jpg/v1/fit/w_622,h_350,q_90/6587f5_53931f944c2a46a3a7fc2b242c26844e~mv2.jpg" alt="Logo Hospital" class="logo">
+    <h2>Registro de Identificación</h2>
+    <p>Por favor, ingrese su información para continuar.</p>
   </div>
 
-  <div class="input-group">
-    <label for="numero-iden">Número de Identificación</label>
-    <input
-      type="text"
-      id="numero-iden"
-      [(ngModel)]="numeroIden"
-      name="numeroIden"
-      placeholder="Ingrese el número de identificación"
-    />
-  </div>
+  <div class="form-container">
+    <div class="registro-identificacion">
+      <div class="input-group animated-input">
+        <label for="tipo-iden" [ngClass]="{ 'animate': isLabelAnimated }">Tipo de Identificación</label>
+        <div class="custom-select-wrapper">
+          <select id="tipo-iden" [(ngModel)]="tipoIden" name="tipoIden" (change)="triggerLabelAnimation()">
+            <option value="" disabled selected>Seleccione su tipo de identificación</option>
+            <option value="CC">Cédula de Ciudadanía</option>
+            <option value="TI">Tarjeta de Identidad</option>
+            <option value="CE">Cédula de Extranjería</option>
+            <option value="RC">Registro Civil</option>
+            <option value="PP">Pasaporte</option>
+            <option value="PEP">Permiso especial de permanencia</option>
+          </select>
+        </div>
+      </div>
 
-  <button (click)="consultarPaciente()" class="submit-btn">Consultar</button>
+      <div class="input-group animated-input">
+        <label for="numero-iden" [ngClass]="{ 'animate': isLabelAnimated }">Número de Identificación</label>
+        <input
+          type="text"
+          id="numero-iden"
+          [(ngModel)]="numeroIden"
+          name="numeroIden"
+          placeholder="Ingrese su número de identificación"
+          (focus)="triggerLabelAnimation()"
+        />
+      </div>
+
+      <button (click)="consultarPaciente()" class="submit-btn">
+        <i class="fas fa-search"></i> Consultar
+      </button>
+    </div>
+
+    <div class="datos-usuario">
+      <h3>Datos del Usuario</h3>
+      <div class="input-group">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" [(ngModel)]="nombre" />
+      </div>
+      <div class="input-group">
+        <label for="sexo">Sexo:</label>
+        <input type="text" id="sexo" name="sexo" [(ngModel)]="sexo" />
+      </div>
+      <div class="input-group">
+        <label for="direccion">Dirección:</label>
+        <input type="text" id="direccion" name="direccion" [(ngModel)]="direccion" />
+      </div>
+      <div class="input-group">
+        <label for="ciudad">Ciudad:</label>
+        <input type="text" id="ciudad" name="ciudad" [(ngModel)]="ciudad" />
+      </div>
+      <div class="input-group">
+        <label for="telefono">Teléfono:</label>
+        <input type="text" id="telefono" name="telefono" [(ngModel)]="telefono" />
+      </div>
+      <div class="input-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" [(ngModel)]="email" />
+      </div>
+      <div class="input-group">
+        <label for="nombreEmpresa">Nombre de la Empresa:</label>
+        <input type="text" id="nombreEmpresa" name="nombreEmpresa" [(ngModel)]="nombreEmpresa" />
+      </div>
+    </div>
+  </div>
 </div>

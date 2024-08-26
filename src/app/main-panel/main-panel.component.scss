@@ -1,90 +1,105 @@
 #inst_title {
-  background-color: #fff; // Color de fondo del header
-  padding: 10px 20px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #f9fafb; // Fondo claro y neutro
+  padding: 20px;
+  border-bottom: 2px solid #e5e7eb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #logo_area {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 
 #logo {
-  width: 550px;
+  width: 250px; // Tamaño reducido del logo
   cursor: pointer;
-  transition: transform 0.3s ease;
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 #logo:hover {
-  transform: scale(1.05);
+  opacity: 0.8; // Efecto de opacidad al pasar el ratón
+  transform: scale(1.05); // Efecto de escala al pasar el ratón
 }
 
 .main-container {
   text-align: center;
-  padding: 20px;
+  padding: 40px;
+  background: linear-gradient(135deg, #f3f4f6 0%, #ffffff 100%); // Fondo degradado suave
 }
 
 .welcome-card {
-  background-color: #f0f8ff; // Color de fondo
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
+  background-color: #ffffff; // Fondo blanco puro
+  padding: 40px;
+  border-radius: 16px;
+  margin-bottom: 30px;
+  border: 1px solid #e5e7eb; // Borde sutil
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.welcome-card:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); // Sombra suave al pasar el ratón
+  transform: translateY(-5px); // Efecto de elevación
 }
 
 .welcome-icon {
   width: 80px;
-  margin-bottom: 10px;
-}
-
-h1 {
-  font-size: 2em;
-  color: #333;
-  margin: 10px 0;
-}
-
-h2 {
-  font-size: 1.5em;
-  color: #666;
-  margin: 10px 0;
-}
-
-p {
-  font-size: 1em;
-  color: #555;
-}
-
-.service-card {
-  background-color: #ffffff; // Color de fondo
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-h3 {
-  font-size: 1.25em;
-  color: #333;
   margin-bottom: 20px;
 }
 
-.service-btn {
-  display: flex;
-  align-items: center;
-  background-color: #007bff; // Color de fondo del botón
-  color: #fff;
-  border: none;
-  border-radius: 8px;
-  padding: 10px 20px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+h1 {
+  font-size: 2.4em;
+  color: #111827; // Color oscuro y neutro
+  margin-bottom: 10px;
+  font-weight: 700; // Negrita
 }
 
-.service-btn:hover {
-  background-color: #0056b3; // Color al pasar el ratón
+h2 {
+  font-size: 1.6em;
+  color: #6b7280;
+  margin-bottom: 20px;
+  font-weight: 500; // Seminegrita
+}
+
+p {
+  font-size: 1.2em;
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+.service-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; // Permite que las tarjetas se envuelvan si es necesario
+}
+
+.service-card {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  width: 200px;
+  margin: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #e5e7eb;
+  text-align: center;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 .service-icon {
-  width: 24px;
-  margin-right: 10px;
+  width: 60px;
+  margin-bottom: 15px;
+}
+
+h3 {
+  font-size: 1.2em;
+  color: #111827;
+  font-weight: 500; // Seminegrita
 }

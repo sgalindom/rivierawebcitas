@@ -18,18 +18,18 @@
     />
     <h1>Bienvenido a Clínica La Riviera</h1>
     <h2>Por un Bienestar en Movimiento</h2>
-    <p>Aquí podrás agendar tus servicios de manera fácil y rápida. Elige el servicio que necesitas y déjanos ayudarte a programar tu cita.</p>
+    <p>Agenda tus servicios de manera fácil y rápida.</p>
   </div>
 
-  <div class="service-card">
-    <h3>¿Qué servicio deseas agendar?</h3>
-    <button (click)="selectService('Ortopedia')" class="service-btn">
+  <div class="service-container">
+    <div class="service-card" (click)="selectService('Ortopedia')">
       <img 
-        src="https://cdn.icon-icons.com/icons2/468/PNG/512/Bone_44351.png" 
+        src="https://cdn-icons-png.flaticon.com/512/2719/2719428.png" 
         alt="Ortopedia Icon" 
         class="service-icon"
       />
-      Ortopedia
-    </button>
+      <h3>Ortopedia</h3>
+    </div>
+    <!-- Agrega más tarjetas de servicio aquí si es necesario -->
   </div>
 </div>
