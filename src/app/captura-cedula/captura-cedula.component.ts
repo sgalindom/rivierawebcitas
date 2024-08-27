@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule, FormGroup, FormControl, Validators } from '@angular/forms';
+import { Component } from '@angular/core';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Router } from '@angular/router';
+import { Router } from '@angular/router'; // Importar Router para navegación
+import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-captura-cedula',
@@ -11,7 +12,7 @@ import { Router } from '@angular/router';
   templateUrl: './captura-cedula.component.html',
   styleUrls: ['./captura-cedula.component.scss']
 })
-export class CapturaCedulaComponent implements OnInit {
+export class CapturaCedulaComponent {
   capturaCedulaForm: FormGroup;
   loading = false;
   errorMessage = '';
@@ -23,14 +24,12 @@ export class CapturaCedulaComponent implements OnInit {
   private apiUrl = 'http://26.49.204.131:8095/api/paciente/consultarPaciente';
   private token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbiI6dHJ1ZSwiYXV0aG9yaXplZCI6dHJ1ZSwiZGVwZW5kZW5jaWEiOjAsIm5vbWJyZUJhc2UiOiIiLCJub21icmVEZXBlbmRlbmNpYSI6IiIsIm5vbWJyZVN1Y3Vyc2FsIjoiIiwibm9tYnJlVXN1YXJpbyI6IkNFTlRSTyBNRURJQ08gUVVJUlVSR0lDTyBMQSBSSVZJRVJBIFMuQS5TIiwic3VjdXJzYWwiOjAsInVzdWFyaW8iOjB9.nOvByNtzeKUWXdluG_td_p8mTVD8UttwbdNWxR6Epsw';
 
-  constructor(private http: HttpClient, private router: Router) {
+  constructor(private http: HttpClient, private router: Router) { // Inyectar Router
     this.capturaCedulaForm = new FormGroup({
       tipoIden: new FormControl('', Validators.required),
       numeroIden: new FormControl('', Validators.required)
     });
   }
-
-  ngOnInit(): void {}
 
   triggerLabelAnimation() {
     this.isLabelAnimated = true;
@@ -53,7 +52,7 @@ export class CapturaCedulaComponent implements OnInit {
             this.showModal = true;
           } else {
             this.errorMessage = 'Usuario no registrado. Por favor, registre su información.';
-            this.router.navigate(['/registro-user']);
+            this.router.navigate(['/registro-user']); // Redirigir al registro
           }
           this.loading = false;
         },
@@ -66,7 +65,7 @@ export class CapturaCedulaComponent implements OnInit {
   }
 
   confirmarInformacion() {
-    this.router.navigate(['/opciones-ortopedia']);
+    this.router.navigate(['/opciones-ortopedia']); // Redirigir a opciones-ortopedia
   }
 
   closeModal() {
