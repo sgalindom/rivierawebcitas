@@ -1,0 +1,7 @@
+{
+  "/api": {
+    "target": "http://26.49.204.131:8095",
+    "secure": false,
+    "changeOrigin": true
+  }
+}

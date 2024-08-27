@@ -1,18 +1,21 @@
-<!-- src/app/captura-cedula/captura-cedula.component.html -->
 <div class="captura-cedula-container">
   <div class="header">
-    <img src="https://static.wixstatic.com/media/6587f5_53931f944c2a46a3a7fc2b242c26844e~mv2.jpg/v1/fit/w_622,h_350,q_90/6587f5_53931f944c2a46a3a7fc2b242c26844e~mv2.jpg" alt="Logo Hospital" class="logo">
+    <img
+      src="https://static.wixstatic.com/media/6587f5_53931f944c2a46a3a7fc2b242c26844e~mv2.jpg/v1/fit/w_622,h_350,q_90/6587f5_53931f944c2a46a3a7fc2b242c26844e~mv2.jpg"
+      alt="Logo Hospital"
+      class="logo"
+    />
     <h2>Registro de Identificación</h2>
     <p>Por favor, ingrese su información para continuar.</p>
   </div>
 
-  <div class="form-container">
+  <form [formGroup]="capturaCedulaForm" (ngSubmit)="consultarPaciente()" class="form-container">
     <div class="registro-identificacion">
       <div class="input-group animated-input">
         <label for="tipo-iden" [ngClass]="{ 'animate': isLabelAnimated }">Tipo de Identificación</label>
         <div class="custom-select-wrapper">
-          <select id="tipo-iden" [(ngModel)]="tipoIden" name="tipoIden" (change)="triggerLabelAnimation()">
-            <option value="" disabled selected>Seleccione su tipo de identificación</option>
+          <select id="tipo-iden" formControlName="tipoIden">
+            <option value="" disabled>Seleccione su tipo de identificación</option>
             <option value="CC">Cédula de Ciudadanía</option>
             <option value="TI">Tarjeta de Identidad</option>
             <option value="CE">Cédula de Extranjería</option>
@@ -21,6 +24,9 @@
             <option value="PEP">Permiso especial de permanencia</option>
           </select>
         </div>
+        <div *ngIf="capturaCedulaForm.get('tipoIden')?.invalid && capturaCedulaForm.get('tipoIden')?.touched" class="error-message">
+          Tipo de identificación es requerido.
+        </div>
       </div>
 
       <div class="input-group animated-input">
@@ -28,47 +34,41 @@
         <input
           type="text"
           id="numero-iden"
-          [(ngModel)]="numeroIden"
-          name="numeroIden"
+          formControlName="numeroIden"
           placeholder="Ingrese su número de identificación"
           (focus)="triggerLabelAnimation()"
         />
+        <div *ngIf="capturaCedulaForm.get('numeroIden')?.invalid && capturaCedulaForm.get('numeroIden')?.touched" class="error-message">
+          Número de identificación es requerido y debe ser válido.
+        </div>
       </div>
 
-      <button (click)="consultarPaciente()" class="submit-btn">
+      <button type="submit" [disabled]="capturaCedulaForm.invalid || loading" class="submit-btn">
         <i class="fas fa-search"></i> Consultar
       </button>
     </div>
 
-    <div class="datos-usuario">
-      <h3>Datos del Usuario</h3>
-      <div class="input-group">
-        <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" name="nombre" [(ngModel)]="nombre" />
+    <div *ngIf="loading" class="loading-indicator">Cargando...</div>
+
+    <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+  </form>
+
+    <!-- Modal para mostrar la información del paciente -->
+  <div class="modal" *ngIf="showModal">
+    <div class="modal-content">
+      <span class="close" (click)="closeModal()">&times;</span>
+      <h3>Datos del Paciente</h3>
+      <div *ngIf="paciente">
+        <p><strong>Nombre:</strong> {{ paciente.nombre }}</p>
+        <p><strong>Sexo:</strong> {{ paciente.sexo }}</p>
+        <p><strong>Dirección:</strong> {{ paciente.direccion }}</p>
+        <p><strong>Ciudad:</strong> {{ paciente.ciudad }}</p>
+        <p><strong>Teléfono:</strong> {{ paciente.telefono }}</p>
+        <p><strong>Email:</strong> {{ paciente.email }}</p>
+        <p><strong>Nombre de la Empresa:</strong> {{ paciente.nombreEmpresa }}</p>
       </div>
-      <div class="input-group">
-        <label for="sexo">Sexo:</label>
-        <input type="text" id="sexo" name="sexo" [(ngModel)]="sexo" />
-      </div>
-      <div class="input-group">
-        <label for="direccion">Dirección:</label>
-        <input type="text" id="direccion" name="direccion" [(ngModel)]="direccion" />
-      </div>
-      <div class="input-group">
-        <label for="ciudad">Ciudad:</label>
-        <input type="text" id="ciudad" name="ciudad" [(ngModel)]="ciudad" />
-      </div>
-      <div class="input-group">
-        <label for="telefono">Teléfono:</label>
-        <input type="text" id="telefono" name="telefono" [(ngModel)]="telefono" />
-      </div>
-      <div class="input-group">
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" [(ngModel)]="email" />
-      </div>
-      <div class="input-group">
-        <label for="nombreEmpresa">Nombre de la Empresa:</label>
-        <input type="text" id="nombreEmpresa" name="nombreEmpresa" [(ngModel)]="nombreEmpresa" />
+      <div class="modal-actions">
+        <button (click)="confirmarInformacion()" class="confirm-btn">Aceptar</button>
       </div>
     </div>
   </div>

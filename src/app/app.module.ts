@@ -1,8 +1,7 @@
-// src/app/app.module.ts
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { CapturaCedulaComponent } from './captura-cedula/captura-cedula.component';
@@ -17,7 +16,7 @@ import { appRoutes } from './app.routes';
     CapturaCedulaComponent,
     OpcionesOrtopediaComponent,
     DetallesPacienteComponent,
-    ConfirmacionCitaComponent
+    ConfirmacionCitaComponent,
   ],
   imports: [
     BrowserModule,
